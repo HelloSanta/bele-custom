@@ -1,0 +1,45 @@
+<?php
+
+function sonet_install()
+{	
+	/*//Create Sonet Deposite Menu
+	 $menu = array(
+        'menu_name' => 'sonet-deposit-menu',
+        'title' => 'Deposit Menu',
+        'description' => 'Sonet All Method Deposit Menu'
+    );
+
+    menu_save($menu);
+    cache_clear_all('*', 'cache_menu', TRUE);
+*/
+    
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+ function sonet_uninstall(){
+ 	variable_del('sonet_status');
+ 	variable_del('sonet_payment_status');
+ 	variable_del('sonet_icpIde');
+ 	variable_del('sonet_icpProdId');
+ 	variable_del('sonet_http_method');
+ 	variable_del('sonet_authorder_dev');
+ 	variable_del('sonet_authorder_pro');
+ 	variable_del('sonet_authorder_wsdl_dev');
+ 	variable_del('sonet_authorder_wsdl_pro');
+ 	variable_del('sonet_frontHost_dev');
+ 	variable_del('sonet_frontHost_pro');
+
+ 	/*$menu = array(
+        'menu_name' => 'sonet-deposit-menu',
+        'title' => 'Deposit Menu',
+        'description' => 'Sonet All Method Deposit Menu'
+    );
+
+    menu_delete($menu);*/
+
+ }
+
+?>

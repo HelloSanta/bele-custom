@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Sonet Payment feature.
+ */
+
+include_once 'sonet_payment.features.inc';

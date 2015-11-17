@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Main Section feature.
+ */
+
+include_once 'main_section.features.inc';

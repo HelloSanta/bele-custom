@@ -1,0 +1,76 @@
+<?php
+
+//將/node這個頁面讓他變成not-found
+function hellosanta_menu_alter(&$items) {
+    $items['node']['page callback'] = 'drupal_not_found';
+}
+
+
+
+function hellosanta_form_alter(&$form, &$form_state, $form_id){	
+
+  if($form_id=="webform_client_form_51"){
+		$form['#prefix'] = '<div class="Contact_Form_wrapper">';
+  		$form['#suffix'] = '</div>';
+	}
+  elseif($form_id=="user_register_form"){
+      $form['#prefix'] = 本系統將會寄送一封認證信，請點選認證信中的連結啟動帳號;
+      $form['.edit-field-real-name']['#suffix'] = '本平台不定期會舉辦促銷贈獎活動，為保障您的權益，請填寫真實姓名';
+  }
+  elseif(strpos($form_id, 'commerce_cart_add_to_cart_form') !== FALSE) {
+    if(arg(0)=='node'){
+      $node=node_load(arg(1));
+      $type=$node->type;
+      
+      if($type=="class"){
+        $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => t('馬上參加'),
+        );  
+      }
+      elseif($type=="online_consultant"){
+        $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => t('馬上預約'),
+        );
+      }
+        
+    } 
+  }
+  
+}	
+
+function hellosanta_node_view($node,$view_mode,$langcode){
+  // $user=user_load(1);
+  // $result=node_access('view',$node,$user);
+  // dpm($result);
+}
+
+
+//判斷此篇付費文章是否有閱讀權限，有權限，將會更改view_mode為paid_view_mode
+function hellosanta_entity_view_mode_alter(&$view_mode, $context){
+  global $user;
+
+  $type=$context['entity_type'];
+  $entity=$context['entity']; 
+
+  if($type=='node'){
+    $node_type=$entity->type;
+    if($node_type=="premium_article"){
+      $product_id=$entity->field_premium_content['und'][0]['product_id'];
+      $product=commerce_product_load($product_id);
+      $premium_article_id=$product->field_premium_article['und'][0]['target_id'];
+      $premium_article=node_load($premium_article_id);
+      
+      //如果有權限觀看此篇文章，則更換viewmode為paid_view_mode
+      if(node_access('view',$premium_article,$user)){
+        $view_mode='paid_view_mode'; 
+      }
+
+      
+    }
+    
+  }
+}
+  
+?>

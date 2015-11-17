@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Premium Article feature.
+ */
+
+include_once 'premium_article.features.inc';

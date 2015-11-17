@@ -1,0 +1,347 @@
+<?php
+
+require_once ("Somp.class.php");
+
+/**
+ * Implements hook_menu().
+ * 建立儲值頁面
+ */
+function sonet_menu(){
+
+  $items['deposit'] = array(
+    'title' => t('Select Deposit Method'),
+    'page callback' => 'deposit_page',
+    'access arguments' => array('deposit'),
+    'file' => 'sonet.pages.inc',
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+  );
+
+  $items['deposit/credit_card'] = array(
+    'title' => t('Credit Card'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_choose_payment_form'),
+    'access arguments' => array('deposit'),
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/super_store'] = array(
+    'title' => t('Super Store'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_choose_payment_form'),
+    'access arguments' => array('deposit'),
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/spicy_card'] = array(
+    'title' => t('Spicy Card'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_choose_payment_form'),
+    'access arguments' => array('deposit'),
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/small_pay'] = array(
+    'title' => t('Small Pay'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_choose_payment_form'),
+    'access arguments' => array('deposit'),
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/smart_pay'] = array(
+    'title' => t('Smart Pay'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_choose_payment_form'),
+    'access arguments' => array('deposit'),
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/atm'] = array(
+    'title' => t('ATM'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_choose_payment_form'),
+    'access arguments' => array('deposit'),
+    'type' => MENU_NORMAL_ITEM,
+    // 'menu_name' => 'sonet-deposit-menu',
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/atm/confirm'] = array(
+    'title' => t('Confirm ATM'),
+    'page callback' => 'atm_confirm_page',
+    'access callback'=> TRUE,
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/confirm'] = array(
+    'title' => t('Confirm Deposit'),
+    'page callback' => 'confirm_page',
+    'access arguments' => array('deposit'),
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['deposit/result'] = array(
+    'title' => t('Deposit Result'),
+    'page callback' => 'result_page',
+    'access arguments' => array('deposit'),
+    'file' => 'sonet.pages.inc',
+  );
+
+  $items['admin/config/system/sonet_config'] = array(
+    'title' => t('Sonet Configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sonet_config_form'),
+    'access arguments' => array('administer sonet'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'sonet.admin.inc',
+  );
+
+  return $items;
+}
+
+
+function sonet_menu_alter(&$items) {
+  //將所有的付款方式陣列列出來,若是有開啟這個服務，則可以進入這個付款頁面
+  //所有選項如下：'credit_card','super_store','spicy_card','smart_pay','small_pay','atm'
+  
+  $values = array_filter(variable_get('sonet_payment_status', array()));
+  if(variable_get('sonet_status')=='closed' or variable_get('sonet_status')==''){
+    $items['deposit/credit_card']['page callback'] = 'drupal_access_denied';
+    $items['deposit/super_store']['page callback'] = 'drupal_access_denied';
+    $items['deposit/spicy_card']['page callback'] = 'drupal_access_denied';
+    $items['deposit/smart_pay']['page callback'] = 'drupal_access_denied';
+    $items['deposit/small_pay']['page callback'] = 'drupal_access_denied';
+    $items['deposit/atm']['page callback'] = 'drupal_access_denied';
+  }
+  else{
+    if(!in_array("credit_card", $values)){
+      $items['deposit/credit_card']['page callback'] = 'drupal_access_denied';
+    }
+    elseif(!in_array("super_store", $values)){
+      $items['deposit/super_store']['page callback'] = 'drupal_access_denied';
+    }
+    elseif(!in_array("spicy_card", $values)){
+      $items['deposit/spicy_card']['page callback'] = 'drupal_access_denied';
+    }
+    elseif(!in_array("smart_pay", $values)){
+      $items['deposit/smart_pay']['page callback'] = 'drupal_access_denied';
+    }
+    elseif(!in_array("small_pay", $values)){
+      $items['deposit/small_pay']['page callback'] = 'drupal_access_denied';
+    }
+    elseif(!in_array("atm", $values)){
+      $items['deposit/atm']['page callback'] = 'drupal_access_denied';
+    }
+  }
+
+  
+  
+}
+
+function sonet_permission() {
+  return array(
+    'administer sonet' => array(
+      'title' => t('administer sonet'),
+      'description' => t('Access administer sonet page'),
+    ),
+    'administer arguments sonet' => array(
+      'title' => t('administer arguments sonet'),
+      'description' => t('Access Sonet Arguments Settings'),
+    ),
+    'deposit' => array(
+      'title' => t('deposit'),
+      'description' => t('Access Deposit Page'),
+    ),
+  );
+}
+
+function sonet_variable_group_info() {
+  $groups['sonet_all'] = array(
+    'title' => t('Sonet Global Settings'), 
+    'description' => t('Sonet Currency global configuration.'), 
+  );
+
+  return $groups;
+}
+
+
+
+function sonet_variable_info() {
+  
+
+  $variables['sonet_status'] = array(
+    'name' => 'sonet_status',
+    'title' => t('Sonet Currency Status'),
+    'description' => t('Select Current System environment. Ex: Dev,Production,Closed'),
+    'default' => 'closed',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'radios',
+      '#options' => array(
+        'dev' => t('Development'),
+        'production' => t('Production'),
+        'closed' => t('Closed'),
+      ),
+    ),
+  );
+
+  $variables['sonet_payment_status'] = array(
+    'name' => 'sonet_payment_status',
+    'title' => t('Payment Currency Status'),
+    'description' => t('Check the Payment method you want to enable'),
+    'type' => 'options',
+    'group' => 'sonet_all',
+    'default'=>array('credit_card','super_store','spicy_card','smart_pay','small_pay','atm'),
+    'token' => TRUE,
+    'options' => array(
+        'credit_card' => '信用卡',
+        'super_store' => '超商代收',
+        'spicy_card'  => '辣椒卡',
+        'smart_pay'   => '消費扣款',
+        'small_pay'   => '小額付費',
+        'atm'         => 'ATM虛擬帳號',
+     ),
+  );
+
+  $variables['sonet_icpIde'] = array(
+    'name' => 'sonet_icpIde',
+    'title' => t('icpIde'),
+    'description' => t('You can get this code from Sonet Service Person'),
+    'default' => 'ideaez',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+      '#size' => 30,
+    ),
+  );
+
+  $variables['sonet_icpProdId'] = array(
+    'name' => 'sonet_icpProdId',
+    'title' => t('icpProdId'),
+    'description' => t('This Code is defined for spicy card, atm, credit card, smart pay,but not for small pay.Small pay should be handled by rewriting the code on this module.'),
+    'default' => 'idz_0001',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+      '#size' => 30,
+    ),
+  );
+
+  $variables['sonet_http_method'] = array(
+    'name' => 'sonet_http_method',
+    'title' => t('Sonet Http Method'),
+    'description' => t('Http Request Method. Post or Soap.'),
+    'default' => 'post',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'radios',
+      '#options' => array(
+        'post' => t('Post'),
+        'soap' => t('Soap'),
+      ),
+    ),
+  );
+
+
+  $variables['sonet_authorder_dev'] = array(
+    'name' => 'sonet_authorder_dev',
+    'title' => t('Credit AuthOrder Http Post Url (Development)'),
+    'description' => t('Please Check the Sonet Manual'),
+    'default' => 'http://mpapi-dev.so-net.net.tw/microPaymentPost.php',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+    ),
+  );
+
+  $variables['sonet_authorder_pro'] = array(
+    'name' => 'sonet_authorder_pro',
+    'title' => t('Credit AuthOrder Http Post Url (Production)'),
+    'description' => t('Please Check the Sonet Manual'),
+    'default' => 'https://mpapi.so-net.net.tw/microPaymentPost.php',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+    ),
+  );
+
+  $variables['sonet_authorder_wsdl_dev'] = array(
+    'name' => 'sonet_authorder_wsdl_dev',
+    'title' => t('AuthOrder Http SOAP Url (Development)'),
+    'description' => t('Please Check the Sonet Manual'),
+    'default' => 'http://mpapi-dev.so-net.net.tw/xml/microPaymentServiceProdDev.wsdl',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+    ),
+  );
+
+  $variables['sonet_authorder_wsdl_pro'] = array(
+    'name' => 'sonet_authorder_wsdl_pro',
+    'title' => t('AuthOrder Http SOAP Url (Production)'),
+    'description' => t('Please Check the Sonet Manual'),
+    'default' => 'https://mpapi.so-net.net.tw/xml/microPaymentServiceProd.wsdl',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+    ),
+  );
+
+  $variables['sonet_frontHost_dev'] = array(
+    'name' => 'sonet_frontHost_dev',
+    'title' => t('Front Host Url(Development)'),
+    'description' => t('Please Check the Sonet Manual'),
+    'default' => 'http://mpay-dev.so-net.net.tw/paymentRule.php',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+    ),
+  );
+
+  $variables['sonet_frontHost_pro'] = array(
+    'name' => 'sonet_frontHost_pro',
+    'title' => t('Front Host Url(Production)'),
+    'description' => t('Please Check the Sonet Manual'),
+    'default' => 'http://mpay.so-net.net.tw/paymentRule.php',
+    'type' => 'string',
+    'group' => 'sonet_all',
+    'token' => TRUE,
+    'element' => array(
+      '#type' => 'textfield',
+    ),
+  );
+
+  return $variables;
+}
+
+
+?>
