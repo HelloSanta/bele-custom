@@ -9,14 +9,11 @@ function hellosanta_menu_alter(&$items) {
 
 function hellosanta_form_alter(&$form, &$form_state, $form_id){	
 
+
   if($form_id=="webform_client_form_51"){
 		$form['#prefix'] = '<div class="Contact_Form_wrapper">';
   		$form['#suffix'] = '</div>';
 	}
-  elseif($form_id=="user_register_form"){
-      $form['#prefix'] = 本系統將會寄送一封認證信，請點選認證信中的連結啟動帳號;
-      $form['.edit-field-real-name']['#suffix'] = '本平台不定期會舉辦促銷贈獎活動，為保障您的權益，請填寫真實姓名';
-  }
   elseif(strpos($form_id, 'commerce_cart_add_to_cart_form') !== FALSE) {
     if(arg(0)=='node'){
       $node=node_load(arg(1));
@@ -37,8 +34,36 @@ function hellosanta_form_alter(&$form, &$form_state, $form_id){
         
     } 
   }
-  
-}	
+  elseif($form_id=='course_question_entityform_edit_form'){
+    $form['#validate'][] = 'hellosanta_course_question_validate';
+  }
+
+}
+
+function hellosanta_course_question_validate($form, &$form_state){
+
+  global $user;
+  $userid=$user->uid;
+
+  $course_id=$form_state['values']['field_course_reference']['und'][0]['target_id'];
+
+  $query=db_select('entityform','n');
+  $query->condition('n.type','course_question');
+  $query->join('field_data_field_course_reference','a','a.entity_id=n.entityform_id');
+  $query->condition('n.uid',$userid);
+  $query->condition('a.field_course_reference_target_id',$course_id);
+  $query->fields('n',array('entityform_id'));
+  $result=$query->execute()->fetchfield();
+
+
+  if(!empty($result)){
+    form_set_error('error','您已經填寫過本次上課問卷，感謝您。');
+  }
+
+
+
+}
+
 
 function hellosanta_node_view($node,$view_mode,$langcode){
   // $user=user_load(1);
@@ -72,5 +97,5 @@ function hellosanta_entity_view_mode_alter(&$view_mode, $context){
     
   }
 }
-  
+
 ?>

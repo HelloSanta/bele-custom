@@ -43,32 +43,32 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -76,7 +76,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -87,11 +87,11 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: ATM虛擬帳號 */
+  /* Field: Content: ATM虛擬帳號 */
   $handler->display->display_options['fields']['field_vatmaccount']['id'] = 'field_vatmaccount';
   $handler->display->display_options['fields']['field_vatmaccount']['table'] = 'field_data_field_vatmaccount';
   $handler->display->display_options['fields']['field_vatmaccount']['field'] = 'field_vatmaccount';
-  /* 欄位: 內容: ATM繳款期限 */
+  /* Field: Content: ATM繳款期限 */
   $handler->display->display_options['fields']['field_expiredatetime']['id'] = 'field_expiredatetime';
   $handler->display->display_options['fields']['field_expiredatetime']['table'] = 'field_data_field_expiredatetime';
   $handler->display->display_options['fields']['field_expiredatetime']['field'] = 'field_expiredatetime';
@@ -102,27 +102,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* 欄位: 內容: 回傳錯誤訊息 */
+  /* Field: Content: 回傳錯誤訊息 */
   $handler->display->display_options['fields']['field_resultmesg']['id'] = 'field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['table'] = 'field_data_field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['field'] = 'field_resultmesg';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -130,7 +130,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -138,7 +138,7 @@ function sonet_payment_views_default_views() {
     'atm' => 'atm',
   );
   $handler->display->display_options['filters']['field_payment_method_value']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -160,7 +160,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -182,7 +182,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -198,7 +198,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -216,11 +216,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -246,7 +241,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),
@@ -295,32 +290,32 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -328,7 +323,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -340,27 +335,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* 欄位: 內容: 回傳錯誤訊息 */
+  /* Field: Content: 回傳錯誤訊息 */
   $handler->display->display_options['fields']['field_resultmesg']['id'] = 'field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['table'] = 'field_data_field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['field'] = 'field_resultmesg';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -368,7 +363,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -376,7 +371,7 @@ function sonet_payment_views_default_views() {
     'credit_card' => 'credit_card',
   );
   $handler->display->display_options['filters']['field_payment_method_value']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -398,7 +393,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -420,7 +415,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -436,7 +431,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -454,12 +449,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_field'] = 'field_facebook_id';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -485,7 +474,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),
@@ -533,36 +522,36 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 付款種類 */
+  /* Field: Content: 付款種類 */
   $handler->display->display_options['fields']['field_payment_method']['id'] = 'field_payment_method';
   $handler->display->display_options['fields']['field_payment_method']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['fields']['field_payment_method']['field'] = 'field_payment_method';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -570,7 +559,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -582,27 +571,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 系統環境 */
+  /* Field: Content: 系統環境 */
   $handler->display->display_options['fields']['field_record_en']['id'] = 'field_record_en';
   $handler->display->display_options['fields']['field_record_en']['table'] = 'field_data_field_record_en';
   $handler->display->display_options['fields']['field_record_en']['field'] = 'field_record_en';
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -610,7 +599,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -633,7 +622,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -656,7 +645,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 付款方式 (field_mpid) */
+  /* Filter criterion: Content: 付款方式 (field_mpid) */
   $handler->display->display_options['filters']['field_mpid_value']['id'] = 'field_mpid_value';
   $handler->display->display_options['filters']['field_mpid_value']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['filters']['field_mpid_value']['field'] = 'field_mpid_value';
@@ -672,7 +661,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -688,7 +677,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -704,7 +693,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 使用者: 名稱 */
+  /* Filter criterion: User: Name */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -722,7 +711,7 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -740,12 +729,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_field'] = 'field_facebook_id';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -802,7 +785,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),
@@ -854,32 +837,32 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -887,7 +870,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -899,11 +882,11 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 繳款編號 */
+  /* Field: Content: 繳款編號 */
   $handler->display->display_options['fields']['field_storeorderno']['id'] = 'field_storeorderno';
   $handler->display->display_options['fields']['field_storeorderno']['table'] = 'field_data_field_storeorderno';
   $handler->display->display_options['fields']['field_storeorderno']['field'] = 'field_storeorderno';
-  /* 欄位: 內容: 繳款期限 */
+  /* Field: Content: 繳款期限 */
   $handler->display->display_options['fields']['field_limitdatetime']['id'] = 'field_limitdatetime';
   $handler->display->display_options['fields']['field_limitdatetime']['table'] = 'field_data_field_limitdatetime';
   $handler->display->display_options['fields']['field_limitdatetime']['field'] = 'field_limitdatetime';
@@ -914,27 +897,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* 欄位: 內容: 回傳錯誤訊息 */
+  /* Field: Content: 回傳錯誤訊息 */
   $handler->display->display_options['fields']['field_resultmesg']['id'] = 'field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['table'] = 'field_data_field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['field'] = 'field_resultmesg';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -942,7 +925,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -950,7 +933,7 @@ function sonet_payment_views_default_views() {
     'small_pay' => 'small_pay',
   );
   $handler->display->display_options['filters']['field_payment_method_value']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -972,7 +955,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -994,7 +977,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -1010,7 +993,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 內容: 付款方式 (field_mpid) */
+  /* Filter criterion: Content: 付款方式 (field_mpid) */
   $handler->display->display_options['filters']['field_mpid_value']['id'] = 'field_mpid_value';
   $handler->display->display_options['filters']['field_mpid_value']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['filters']['field_mpid_value']['field'] = 'field_mpid_value';
@@ -1041,7 +1024,7 @@ function sonet_payment_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_mpid_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -1059,11 +1042,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1089,7 +1067,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),
@@ -1139,32 +1117,32 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -1172,7 +1150,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -1184,27 +1162,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* 欄位: 內容: 回傳錯誤訊息 */
+  /* Field: Content: 回傳錯誤訊息 */
   $handler->display->display_options['fields']['field_resultmesg']['id'] = 'field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['table'] = 'field_data_field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['field'] = 'field_resultmesg';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1212,7 +1190,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -1220,7 +1198,7 @@ function sonet_payment_views_default_views() {
     'smart_pay' => 'smart_pay',
   );
   $handler->display->display_options['filters']['field_payment_method_value']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -1242,7 +1220,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -1264,7 +1242,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -1280,7 +1258,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -1298,11 +1276,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1328,7 +1301,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),
@@ -1376,32 +1349,32 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -1409,7 +1382,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -1421,27 +1394,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* 欄位: 內容: 回傳錯誤訊息 */
+  /* Field: Content: 回傳錯誤訊息 */
   $handler->display->display_options['fields']['field_resultmesg']['id'] = 'field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['table'] = 'field_data_field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['field'] = 'field_resultmesg';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1449,7 +1422,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -1457,7 +1430,7 @@ function sonet_payment_views_default_views() {
     'spicy_card' => 'spicy_card',
   );
   $handler->display->display_options['filters']['field_payment_method_value']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -1479,7 +1452,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -1501,7 +1474,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -1517,7 +1490,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -1535,11 +1508,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1565,7 +1533,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),
@@ -1613,32 +1581,32 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['id'] = 'field_icpuserid_target_id';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['relationships']['field_icpuserid_target_id']['field'] = 'field_icpuserid_target_id';
-  /* 欄位: 內容: 訂單編號 */
+  /* Field: Content: 訂單編號 */
   $handler->display->display_options['fields']['field_icporderid']['id'] = 'field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['fields']['field_icporderid']['field'] = 'field_icporderid';
-  /* 欄位: 內容: SoNet訂單編號 */
+  /* Field: Content: SoNet訂單編號 */
   $handler->display->display_options['fields']['field_sonetorderno']['id'] = 'field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['fields']['field_sonetorderno']['field'] = 'field_sonetorderno';
-  /* 欄位: 內容: 付款方式 */
+  /* Field: Content: 付款方式 */
   $handler->display->display_options['fields']['field_mpid']['id'] = 'field_mpid';
   $handler->display->display_options['fields']['field_mpid']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['fields']['field_mpid']['field'] = 'field_mpid';
-  /* 欄位: 內容: 會員名稱 */
+  /* Field: Content: 會員名稱 */
   $handler->display->display_options['fields']['field_icpuserid']['id'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['table'] = 'field_data_field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['field'] = 'field_icpuserid';
   $handler->display->display_options['fields']['field_icpuserid']['settings'] = array(
     'link' => 0,
   );
-  /* 欄位: 使用者: facebook id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_facebook_id']['id'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['field'] = 'field_facebook_id';
   $handler->display->display_options['fields']['field_facebook_id']['relationship'] = 'field_icpuserid_target_id';
   $handler->display->display_options['fields']['field_facebook_id']['label'] = 'Facebook id';
-  /* 欄位: 內容: 金額 */
+  /* Field: Content: 金額 */
   $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
@@ -1646,7 +1614,7 @@ function sonet_payment_views_default_views() {
     'thousand_separator' => ',',
     'prefix_suffix' => 1,
   );
-  /* 欄位: 內容: 訂單時間 */
+  /* Field: Content: 訂單時間 */
   $handler->display->display_options['fields']['field_orderdatatime']['id'] = 'field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['table'] = 'field_data_field_orderdatatime';
   $handler->display->display_options['fields']['field_orderdatatime']['field'] = 'field_orderdatatime';
@@ -1658,11 +1626,11 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 繳款編號 */
+  /* Field: Content: 繳款編號 */
   $handler->display->display_options['fields']['field_storeorderno']['id'] = 'field_storeorderno';
   $handler->display->display_options['fields']['field_storeorderno']['table'] = 'field_data_field_storeorderno';
   $handler->display->display_options['fields']['field_storeorderno']['field'] = 'field_storeorderno';
-  /* 欄位: 內容: 繳款期限 */
+  /* Field: Content: 繳款期限 */
   $handler->display->display_options['fields']['field_limitdatetime']['id'] = 'field_limitdatetime';
   $handler->display->display_options['fields']['field_limitdatetime']['table'] = 'field_data_field_limitdatetime';
   $handler->display->display_options['fields']['field_limitdatetime']['field'] = 'field_limitdatetime';
@@ -1673,27 +1641,27 @@ function sonet_payment_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* 欄位: 內容: 訂單狀態 */
+  /* Field: Content: 訂單狀態 */
   $handler->display->display_options['fields']['field_payment_status']['id'] = 'field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['fields']['field_payment_status']['field'] = 'field_payment_status';
-  /* 欄位: 內容: 回傳錯誤訊息 */
+  /* Field: Content: 回傳錯誤訊息 */
   $handler->display->display_options['fields']['field_resultmesg']['id'] = 'field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['table'] = 'field_data_field_resultmesg';
   $handler->display->display_options['fields']['field_resultmesg']['field'] = 'field_resultmesg';
-  /* Sort criterion: 內容: Post date */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: 內容: 已發表 */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: 內容: 類型 */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1701,7 +1669,7 @@ function sonet_payment_views_default_views() {
     'deposit_record' => 'deposit_record',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: 內容: 付款種類 (field_payment_method) */
+  /* Filter criterion: Content: 付款種類 (field_payment_method) */
   $handler->display->display_options['filters']['field_payment_method_value']['id'] = 'field_payment_method_value';
   $handler->display->display_options['filters']['field_payment_method_value']['table'] = 'field_data_field_payment_method';
   $handler->display->display_options['filters']['field_payment_method_value']['field'] = 'field_payment_method_value';
@@ -1709,7 +1677,7 @@ function sonet_payment_views_default_views() {
     'super_store' => 'super_store',
   );
   $handler->display->display_options['filters']['field_payment_method_value']['group'] = 1;
-  /* Filter criterion: 內容: 訂單編號 (field_icporderid) */
+  /* Filter criterion: Content: 訂單編號 (field_icporderid) */
   $handler->display->display_options['filters']['field_icporderid_value']['id'] = 'field_icporderid_value';
   $handler->display->display_options['filters']['field_icporderid_value']['table'] = 'field_data_field_icporderid';
   $handler->display->display_options['filters']['field_icporderid_value']['field'] = 'field_icporderid_value';
@@ -1731,7 +1699,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_icporderid_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: SoNet訂單編號 (field_sonetorderno) */
+  /* Filter criterion: Content: SoNet訂單編號 (field_sonetorderno) */
   $handler->display->display_options['filters']['field_sonetorderno_value']['id'] = 'field_sonetorderno_value';
   $handler->display->display_options['filters']['field_sonetorderno_value']['table'] = 'field_data_field_sonetorderno';
   $handler->display->display_options['filters']['field_sonetorderno_value']['field'] = 'field_sonetorderno_value';
@@ -1753,7 +1721,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_sonetorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 繳款編號 (field_storeorderno) */
+  /* Filter criterion: Content: 繳款編號 (field_storeorderno) */
   $handler->display->display_options['filters']['field_storeorderno_value']['id'] = 'field_storeorderno_value';
   $handler->display->display_options['filters']['field_storeorderno_value']['table'] = 'field_data_field_storeorderno';
   $handler->display->display_options['filters']['field_storeorderno_value']['field'] = 'field_storeorderno_value';
@@ -1776,7 +1744,7 @@ function sonet_payment_views_default_views() {
   $handler->display->display_options['filters']['field_storeorderno_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_storeorderno_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_storeorderno_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: 內容: 訂單狀態 (field_payment_status) */
+  /* Filter criterion: Content: 訂單狀態 (field_payment_status) */
   $handler->display->display_options['filters']['field_payment_status_value']['id'] = 'field_payment_status_value';
   $handler->display->display_options['filters']['field_payment_status_value']['table'] = 'field_data_field_payment_status';
   $handler->display->display_options['filters']['field_payment_status_value']['field'] = 'field_payment_status_value';
@@ -1792,7 +1760,7 @@ function sonet_payment_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: 內容: 付款方式 (field_mpid) */
+  /* Filter criterion: Content: 付款方式 (field_mpid) */
   $handler->display->display_options['filters']['field_mpid_value']['id'] = 'field_mpid_value';
   $handler->display->display_options['filters']['field_mpid_value']['table'] = 'field_data_field_mpid';
   $handler->display->display_options['filters']['field_mpid_value']['field'] = 'field_mpid_value';
@@ -1813,7 +1781,7 @@ function sonet_payment_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_mpid_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: 使用者: facebook id (field_facebook_id) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_facebook_id_value']['id'] = 'field_facebook_id_value';
   $handler->display->display_options['filters']['field_facebook_id_value']['table'] = 'field_data_field_facebook_id';
   $handler->display->display_options['filters']['field_facebook_id_value']['field'] = 'field_facebook_id_value';
@@ -1831,11 +1799,6 @@ function sonet_payment_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_facebook_id_value']['expose']['autocomplete_dependent'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1861,7 +1824,7 @@ function sonet_payment_views_default_views() {
     t('‹ 上一頁'),
     t('下一頁 ›'),
     t('最後一頁 »'),
-    t('使用者 entity referenced from field_icpuserid'),
+    t('User entity referenced from field_icpuserid'),
     t('訂單編號'),
     t('SoNet訂單編號'),
     t('付款方式'),

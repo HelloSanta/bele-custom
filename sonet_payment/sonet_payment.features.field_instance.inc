@@ -20,7 +20,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -28,6 +30,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'conditions' => array(),
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -91,7 +94,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 3,
       ),
@@ -147,6 +152,237 @@ function sonet_payment_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-deposit_record-field_company'
+  $field_instances['node-deposit_record-field_company'] = array(
+    'bundle' => 'deposit_record',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_company',
+    'label' => '公司抬頭',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'pure_html' => 'pure_html',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'pure_html' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-deposit_record-field_company_addr'
+  $field_instances['node-deposit_record-field_company_addr'] = array(
+    'bundle' => 'deposit_record',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_company_addr',
+    'label' => '公司地址',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'pure_html' => 'pure_html',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'pure_html' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-deposit_record-field_company_serial'
+  $field_instances['node-deposit_record-field_company_serial'] = array(
+    'bundle' => 'deposit_record',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'text_default',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_company_serial',
+    'label' => '公司統編',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'pure_html' => 'pure_html',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'pure_html' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-deposit_record-field_confirmdatetime'
   $field_instances['node-deposit_record-field_confirmdatetime'] = array(
     'bundle' => 'deposit_record',
@@ -157,6 +393,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'conditions' => array(),
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -210,6 +447,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'conditions' => array(),
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -263,7 +501,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -330,6 +570,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'conditions' => array(),
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -374,6 +615,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'conditions' => array(),
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -427,7 +669,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'list_default',
         'weight' => 2,
       ),
@@ -448,7 +692,9 @@ function sonet_payment_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 4,
     ),
@@ -464,6 +710,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'conditions' => array(),
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -517,7 +764,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'list_default',
         'weight' => 6,
       ),
@@ -538,7 +787,9 @@ function sonet_payment_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 3,
     ),
@@ -554,7 +805,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'list_default',
         'weight' => 10,
       ),
@@ -575,7 +828,9 @@ function sonet_payment_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 9,
     ),
@@ -592,6 +847,7 @@ function sonet_payment_field_default_field_instances() {
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
+          'conditions' => array(),
           'decimal_separator' => '.',
           'prefix_suffix' => TRUE,
           'scale' => 0,
@@ -627,6 +883,52 @@ function sonet_payment_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-deposit_record-field_recipes'
+  $field_instances['node-deposit_record-field_recipes'] = array(
+    'bundle' => 'deposit_record',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_recipes',
+    'label' => '發票資訊',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'node-deposit_record-field_record_en'
   $field_instances['node-deposit_record-field_record_en'] = array(
     'bundle' => 'deposit_record',
@@ -637,7 +939,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'list_default',
         'weight' => 5,
       ),
@@ -658,7 +962,9 @@ function sonet_payment_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 8,
     ),
@@ -674,7 +980,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 14,
       ),
@@ -740,7 +1048,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 9,
       ),
@@ -806,7 +1116,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 11,
       ),
@@ -872,7 +1184,9 @@ function sonet_payment_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'conditions' => array(),
+        ),
         'type' => 'text_default',
         'weight' => 16,
       ),
@@ -936,11 +1250,15 @@ function sonet_payment_field_default_field_instances() {
   t('付款方式');
   t('付款種類');
   t('備註');
+  t('公司地址');
+  t('公司抬頭');
+  t('公司統編');
   t('商家驗證日期');
   t('回傳錯誤訊息');
   t('授權碼');
   t('會員名稱');
   t('此筆資料為Sonet認證傳回來的值');
+  t('發票資訊');
   t('系統環境');
   t('繳款期限');
   t('繳款編號');
