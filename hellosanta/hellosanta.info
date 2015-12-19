@@ -3,6 +3,9 @@ description=Hellosanta Module created by Victor
 package=Hellosanta Module
 core=7.x
 
+dependencies[] = elysia_cron
+dependencies[] = entity
+
 files[]=hellosanta.install
 files[]=hellosanta.info
 files[]=hellosanta.module

@@ -98,4 +98,54 @@ function hellosanta_entity_view_mode_alter(&$view_mode, $context){
   }
 }
 
+function hellosanta_cron(){
+
+  $query=db_select('users_roles','u');
+  $query->conditions('rid',array(5,6));
+  $query->fields('u',array('uid'));
+  $result=$query->execute()->fetchAll();
+
+  foreach($result as $key => $value){
+    $uid=$value->uid;
+    $user=user_load($uid);
+
+    //您開的課程
+    $query = new EntityFieldQuery;
+    $entities = $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'class')
+      ->propertyCondition('uid', $uid); // node written by a specific user
+      //->propertyCondition('status', 1);
+    $edit_node = $query->execute();
+    $nid_array=NULL;
+    if(!empty($edit_node)){
+      $array=$edit_node['node'];
+      $nid_array=array_keys($array);
+
+    }
+
+
+    $query = new EntityFieldQuery;
+    $entities = $query->entityCondition('entity_type', 'entityform')
+                      ->entityCondition('bundle', 'course_question')
+                      ->fieldCondition('field_course_reference','target_id',$nid_array)
+                      ->count();
+    $total = $query->execute();
+
+    $query = new EntityFieldQuery;
+    $entities = $query->entityCondition('entity_type', 'entityform')
+      ->entityCondition('bundle', 'course_question')
+      ->fieldCondition('field_course_reference','target_id',$nid_array)
+      ->fieldCondition('field_satisfied','value',0)
+      ->count();
+    $satisfied = $query->execute();
+
+    $wrapper=entity_metadata_wrapper('user',$user);
+    $wrapper->field_rating->set($satisfied.'/'.$total);
+    $wrapper->save();
+
+  }
+
+}
+
+
 ?>
